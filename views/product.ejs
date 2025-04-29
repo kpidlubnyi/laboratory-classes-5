@@ -7,11 +7,15 @@
   </head>
   <body>
     <main>
-      <%- include('partials/navigation', { menuLinks: menuLinks, activeLinkPath:
-      activeLinkPath }); %>
+      <%- include('partials/navigation', { menuLinks: menuLinks, activeLinkPath: activeLinkPath, cartCount: cartCount }); %>
       <h1 class="heading"><%= product.name %></h1>
-      <div><%= product.description %></div>
-      <button onclick="deleteProduct('<%= product.name %>')">Delete</button>
+      <div class="card">
+        <img src="https://placeholder.pics/svg/300x200" alt="<%= product.name %>" class="card__image">
+        <h3 class="card__title"><%= product.name %></h3>
+        <p class="card__description"><%= product.description %></p>
+        <p class="card__price"><%= product.price ? `${product.price} PLN` : 'Cena nieznana' %></p>
+        <button onclick="deleteProduct('<%= product.name %>')">Delete</button>
+      </div>
     </main>
     <script>
       function deleteProduct(name) {

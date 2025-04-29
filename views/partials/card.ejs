@@ -1,0 +1,8 @@
+<div class="card">
+    <img src="https://placeholder.pics/svg/300x200" alt="<%= product.name %>" class="card__image">
+    <h3 class="card__title"><%= product.name %></h3>
+    <p class="card__description"><%= product.description %></p>
+    <p class="card__price"><%= product.price ? `${product.price} PLN` : 'Cena nieznana' %></p>
+    <a href="/products/<%= product.name %>">Details</a>
+    <button onclick="deleteProduct('<%= product.name %>')">Delete</button>
+  </div>

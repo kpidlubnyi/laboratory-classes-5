@@ -5,8 +5,7 @@
   </head>
   <body>
     <main>
-      <%- include('partials/navigation', { menuLinks: menuLinks, activeLinkPath:
-      activeLinkPath }); %>
+      <%- include('partials/navigation', { menuLinks: menuLinks, activeLinkPath: activeLinkPath, cartCount: cartCount || 0 }); %>
       <h1 class="heading">404 - Not Found</h1>
     </main>
   </body>

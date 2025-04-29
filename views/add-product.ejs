@@ -5,8 +5,7 @@
   </head>
   <body>
     <main>
-      <%- include('partials/navigation', { menuLinks: menuLinks, activeLinkPath:
-      activeLinkPath }); %>
+      <%- include('partials/navigation', { menuLinks: menuLinks, activeLinkPath: activeLinkPath, cartCount: cartCount }); %>
       <h1 class="heading">Add product</h1>
       <form class="form" action="/products/add" method="POST">
         <div class="form__group">
@@ -14,12 +13,22 @@
           <input id="name" class="form__input" type="text" name="name" />
         </div>
         <div class="form__group">
-          <label class="form__label" for="description"> Description </label>
+          <label class="form__label" for="description">Description</label>
           <input
             id="description"
             class="form__input"
             type="text"
             name="description"
+          />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="price">Price</label>
+          <input
+            id="price"
+            class="form__input"
+            type="number"
+            step="0.01"
+            name="price"
           />
         </div>
         <button class="button" type="submit">Add</button>
